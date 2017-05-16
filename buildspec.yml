@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - npm install -g yarnpkg
+      - yarn global add angular-cli
+  pre_build:
+    commands:
+      - yarn
+  build:
+    commands:
+      - ng test
+      - ng build -prod
+  post_build:
+    commands:
+      - aws s3 sync dist s3://moussypad.com --delete --acl public-read
+      - aws configure set preview.cloudfront true
+      - aws cloudfront create-invalidation --distribution-id E10T16K5SZ532K --paths /*
