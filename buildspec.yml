@@ -4,6 +4,9 @@ phases:
     commands:
       - npm install -g yarnpkg
       - yarn global add @angular/cli
+      - sudo apt-get install xvfb chromium-browser
+      - export DISPLAY=:99.0
+      - export CHROME_BIN=/usr/bin/chromium-browser
   pre_build:
     commands:
       - yarn
