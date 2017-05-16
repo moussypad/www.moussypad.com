@@ -3,13 +3,13 @@ phases:
   install:
     commands:
       - npm install -g yarnpkg
-      - yarn global add angular-cli
+      - yarn global add @angular-cli
   pre_build:
     commands:
       - yarn
   build:
     commands:
-      - ng test
+      - ng test --watch=false
       - ng build -prod
   post_build:
     commands:
