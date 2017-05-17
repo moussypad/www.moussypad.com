@@ -6,7 +6,7 @@ phases:
       - yarn global add @angular/cli
   pre_build:
     commands:
-      - export CHROME_BIN=Chrome
+      - export CHROME_BIN=google-chrome
       - yarn
   build:
     commands:
