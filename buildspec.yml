@@ -4,15 +4,14 @@ phases:
     commands:
       - npm install -g yarn
       - yarn global add @angular/cli
-      - sudo apt-get update
-      - sudo apt-get -y install google-chrome-stable
+      - sudo apt install chromium-browser
   pre_build:
     commands:
-      - export CHROME_BIN=google-chrome-stable
+      - export CHROME_BIN=chromium-browser
       - yarn
   build:
     commands:
-      - ng test --watch=false
+      - ng test --single-run
       - ng build -prod
   post_build:
     commands:
