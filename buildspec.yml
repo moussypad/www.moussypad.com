@@ -4,10 +4,11 @@ phases:
     commands:
       - npm install -g yarn
       - yarn global add @angular/cli
+      - sudo apt-get update
+      - sudo apt-get -y install google-chrome-stable
   pre_build:
     commands:
-      - export CHROME_BIN=google-chrome
-      - chrome --headless --disable-gpu --remote-debugging-port=9876 http://localhost
+      - export CHROME_BIN=google-chrome-stable
       - yarn
   build:
     commands:
