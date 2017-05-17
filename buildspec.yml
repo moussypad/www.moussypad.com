@@ -4,6 +4,7 @@ phases:
     commands:
       - npm install -g yarn
       - yarn global add @angular/cli
+      - sudo apt-get update
       - sudo apt-get install google-chrome-beta
   pre_build:
     commands:
