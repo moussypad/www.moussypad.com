@@ -14,4 +14,4 @@ phases:
     commands:
       - aws s3 sync dist s3://moussypad.com --delete --acl public-read
       - aws configure set preview.cloudfront true
-      - aws cloudfront create-invalidation --distribution-id E10T16K5SZ532K --paths /*
+      - aws cloudfront create-invalidation --distribution-id E10T16K5SZ532K --paths /\*
